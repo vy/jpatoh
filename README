@@ -1,0 +1,48 @@
+
+                              (                    )
+                              )\ )      *   )   ( /(
+                           ( (()/(   )` )  /(   )\())
+                           )\ /(_)) /( ( )(_)) ((_)\
+                          ((_)_)) )(_))_(_()))\ _((_)
+                            !| _ ((_)_|_   _((_) || |
+                            ||  _/ _` | | |/ _ \ __ |
+                          _/ |_| \__,_| |_|\___/_||_|
+                         |__/ 
+
+
+^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^| A B S T R A C T |^^^^^|
+
+jPaToH supplies Java bindings for PaToH[1]. To be able to compile the package
+you'll need a recent JDK that is compatible with JNA[2]. Steps to follow are
+presented below.
+
+1. Issue "ant jar" command to build the "jpatoh.jar" file.
+
+             $ cd jpatoh
+   .../jpatoh$ ant jar
+
+2. Run below command to see if everything works properly.
+
+   .../jpatoh$ LD_LIBRARY_PATH=/path/to/libpatoh.so  \
+               java                                  \
+               -cp build/jar/jpatoh.jar:lib/jna.jar  \
+               tr.edu.bilkent.cs.patoh.examples.Test \
+               /patoh/to/some/patoh/hypergraph/file
+
+3. Now you're wondering the magic, don't you? See "Test.java" under
+   "src/tr/edu/bilkent/cs/patoh/examples" directory. (To see the full list of
+   exported functions, consult to the javadoc specification of "HyperGraph"
+   class in "doc" directory.)
+
+Comments, bug reports, etc. are welcome.
+
+
+[1] Partitioning Tools for Hypergraph by Ümit V. Çatalyürek
+    http://bmi.osu.edu/~umit/software.html
+
+[2] https://jna.dev.java.net/
+
+
+^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^|^^^^^^^| L I C E N S E |^^^^^^^|
+
+jPaToH is distributed under BSD license[1]. See "LICENSE" file for details.
